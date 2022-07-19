@@ -116,14 +116,14 @@ body {
 .resultStyle {
   font-weight: bold;
   color: black;
-  background-color: var(--dls-action-color);
+  background-color: #d8d8d8;
   padding: 1rem;
 }
 
 .resultStyleLight {
   font-weight: bold;
   color: black;
-  background-color: var(--dls-light-color);
+  background-color: #ebebeb;
   padding: 1rem;
 }
 
