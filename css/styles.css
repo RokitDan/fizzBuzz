@@ -1,0 +1,108 @@
+/* Sticky footer setup */
+html,
+body {
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+  margin-top: 8rem;
+}
+
+.footer {
+  flex-shrink: 0;
+  background-color: var(--dls-secondary-color);
+  color: var(--dls-light-color);
+  padding: 20px;
+  /* Sticky Footer Setup */
+}
+
+/* Navigation Overides */
+#mainNav {
+  background-color: var(--dls-secondary-color);
+  /* color: var(--dls-light-color) !important; */
+}
+
+#appName {
+  font-weight: 500;
+}
+
+#mainNav button {
+  border-color: var(--dls-light-color);
+}
+
+.navbarTogglerIcon-dls {
+  color: var(--dls-light-color);
+}
+
+.navbar-toggler {
+  color: var(--dls-nav-toggler-glow) !important;
+}
+
+/* Navigation Overides */
+
+/* BS button overides */
+.btn-primary {
+  color: white !important;
+  background-color: var(--dls-primary-color) !important;
+  border: none !important;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+  filter: brightness(1.1) !important;
+  transition: 200ms ease;
+}
+
+.btn-outline-primary {
+  color: var(--dls-secondary-color) !important;
+  border-color: var(--dls-primary-color) !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:focus {
+  background-color: var(--dls-primary-color);
+  color: white !important;
+  filter: brightness(1.1) !important;
+  transition: 200ms ease;
+}
+
+/* BS button overides end*/
+
+.checklist {
+  list-style-type: none;
+  line-height: 1.5rem;
+}
+
+.checklist > li i {
+  color: var(--dls-primary-color);
+}
+
+.devicons {
+  font-size: 3.5rem;
+  color: var(--dls-primary-color) !important;
+}
+
+.social {
+  font-size: 2.5rem;
+}
+
+.social > a {
+  color: var(--dls-light-color);
+  opacity: 0.6;
+}
+
+.social > a:hover {
+  color: var(--dls-action-color);
+  opacity: 1;
+  transition: 500ms;
+}
