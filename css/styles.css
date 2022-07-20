@@ -1,6 +1,6 @@
 :root {
   --dls-orange: rgb(223, 202, 21);
-  --dls-background-color-fizzbuzz: rgb(255, 255, 218);
+  --dls-background-color-fizzbuzz: #ffffda;
 }
 
 /* Sticky footer setup */
