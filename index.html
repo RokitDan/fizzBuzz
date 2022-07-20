@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>APP NAME: Coding Challenge by Danny Schellenberger</title>
+    <title>FIZZ BUZZ: Coding Challenge by Danny Schellenberger</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -38,25 +38,32 @@
       rel="stylesheet"
     />
 
+    <!-- Lato Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
     <!-- Favicon -->
-    <link rel="icon" href="/img/DS_Favicon-01.png" />
+    <link rel="icon" href="/img/logo/FizzBuzzIconWhite.svg">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/root.css" />
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/hoverCard.css" />
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <nav class="navbar text-uppercase navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container-fluid">
         <a class="navbar-brand" href="/index.html">
           <img
-            src="/img/DS_headerIcon.svg"
-            alt="DS logo"
+            src="/img/logo/FizzBuzzLogoHorizontal.svg"
+            alt="Fizz Buzz Icon"
             height="40"
             class="d-inline-block"
+            id="appName"
           />
-          <span class="mx-3" id="appName">APP NAME</span></a
+         </a
         >
         <button
           class="navbar-toggler"
@@ -85,10 +92,10 @@
               <a class="nav-link" href="/code.html">The Code</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">The Repo</a>
+              <a class="nav-link" href="https://github.com/RokitDan/fizzBuzz/" target="_blank">The Repo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="https://dannydevportfolio.netlify.app/" target="_blank">About</a>
             </li>
           </ul>
         </div>
@@ -96,60 +103,69 @@
     </nav>
     <!-- MAIN -->
     <main class="content">
-      <div class="container mt-5 align-items-center justify-content-center">
+      <div class="container-fluid align-items-center justify-content-center">
+        <div class="row">
+        <div class="col-12 px-5 text-center" id="appLogo">
+            <img src="/img/logo/FizzBuzzLogo.svg" alt="App Logo" class="image-fluid" id="fizzBuzzMainLogo" >
+          </div>
+        </div>
         <div class="row">
           <div class="col-12 col-lg-6 order-last order-lg-first px-lg-5 mt-5 mt-lg-0" id="info">
-            <h1>APP NAME: A Coding Challenge</h1>
-            <h4 class="lead mt-4 mb-3">Your Project Description</h4>
-            <ul class="checklist">
-              <li>
-                <i class="bi bi-check-square-fill"></i> CSS & Bootstrap Layout
-              </li>
-              <li>
-                <i class="bi bi-check-square-fill"></i> JavaScript Fundamentals
-              </li>
-              <li><i class="bi bi-check-square-fill"></i> JavaScript Loops</li>
-              <li>
-                <i class="bi bi-check-square-fill"></i> JavaScript DOM
-                Manipulation
-              </li>
-              <li>
-                <i class="bi bi-check-square-fill"></i> JavaScript if/then/else
-                Logic
-              </li>
-              <li>
-                <i class="bi bi-check-square-fill"></i> JavaScript Boolean Logic
-              </li>
-            </ul>
-            <p class="my-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-              molestias quos modi, ad, expedita similique sit praesentium neque
-              suscipit consequuntur soluta unde enim facere cumque vero delectus
-              veniam pariatur ipsum!
-            </p>
-            <div>
-              <a type="button" class="btn btn-outline-primary" href="/app.html"
-                >Try It!</a
-              >
             </div>
-                <h5 class="fw-bold mt-5 mb-3">Technologies Used</h5>
-                <div clss="d-flex">   
-                    <div class="row">
+
+          
+        </div>
+        </div>
+      </div>
+      <div class="container">
+      <div class="row row-cols-1 row-cols-lg-2">
+            <div class="col align-items-center gy-4 p-2">
+              <article class="numberChoice py-2 px-4  minHeight">
+                <div class="row">
+                  <h4 class="text-uppercase">Techniques</h4>
+                </div>
+                    <div class="row row-cols-1 row-cols-md-2">
+                        <div class="col"><i class="bi bi-caret-right-fill"></i>CSS & Bootstrap Layout</div>
+                        <div class="col"><i class="bi bi-caret-right-fill"></i>JavaScript Fundamentals</div>
+                        <div class="col"><i class="bi bi-caret-right-fill"></i>JavaScript Loops</div>
+                        <div class="col"><i class="bi bi-caret-right-fill"></i>JavaScript DOM Manipulation</div>
+                        <div class="col"><i class="bi bi-caret-right-fill"></i>JavaScript if/then/else Logic</div>
+                        <div class="col"><i class="bi bi-caret-right-fill"></i>JavaScript Boolean Logic</div>
+                    </div>
+                </article>
+                
+              </div>
+              <div class="col align-items-center gy-4 p-2 h-100">
+                <article class="numberChoice py-2 px-4  minHeight">
+                <div class="row">
+                  <h4 class="text-uppercase h-100">Technologies Used</h4>
+                </div>
+                <div class="row text-center row-cols-3 row-cols-md-5 gy-3">
+                  
+                 
                         <div class="col"><i class="devicons devicon-javascript-plain colored"></i></div>
                         <div class="col"><i class="devicons devicon-bootstrap-plain colored"></i></div>
                         <div class="col"><i class="devicons devicon-html5-plain colored"></i></div>
                         <div class="col"><i class="devicons devicon-css3-plain colored"></i></div>
-                    </div>
+                        <div class="col"><i class="devicons devicon-vscode-plain colored"></i></div>
+                    
+               
+                  
                 </div>
+              </article>
+
+              </div>
+              
             </div>
-          
-          <!-- App Logo -->
-          <div class="col-12 col-lg-6 mb-5 mb-lg-0 px-5" id="appLogo">
-            <img src="/img/DannyLogo2022.svg" alt="App Logo" class="image-fluid">
-          </div>
-        </div>
-        </div>
-      </div>
+              
+            </div>
+            <div class="text-center">
+              <a type="button" class="btn btn-primary btn-lg text-uppercase fw-bold" href="/app.html"
+                >Try It!</a
+              >
+            </div>
+            
+      
     </main>
     <!-- FOOTER -->
     <footer class="footer mt-5">
@@ -159,17 +175,18 @@
                 <span class="muted">&copy; 2022 Danny Schellenberger | dleeschell@gmail.com</span>
             </div>
             <div class="col text-center">
-                <img src="/img/DannyLogo2022white.svg" alt="Danny DS Monogram" height="40">
+                <a class="nav-link" href="https://dannydevportfolio.netlify.app/" target="_blank"><img src="/img/DannyLogo2022white.svg" alt="Danny DS Monogram" height="40"></a>
             </div>
             <div class="col d-flex justify-content-center justify-content-lg-end">
-                    <div class="row">
-                    <div class="col social">
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                    <div class="col social"><a href="#"><i class="bi bi-github"></i></a></div>
-                        
-                </div>
+            <div class="row">
+              <div class="col social">
+                <a href="https://www.linkedin.com/in/danny-schellenberger-9b4b0166/" target="_blank"><i class="bi bi-linkedin"></i></a>
+              </div>
+              <div class="col social">
+                <a href="https://github.com/RokitDan/" target="_blank"><i class="bi bi-github"></i></a>
+              </div>
             </div>
+          </div>
         </div>
       </div>
     </footer>

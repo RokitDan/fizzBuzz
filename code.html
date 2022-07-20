@@ -43,7 +43,7 @@
     />
 
     <!-- Favicon -->
-    <link rel="icon" href="/img/DS_Favicon-01.png" />
+    <link rel="icon" href="/img/logo/FizzBuzzIconWhite.svg">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/root.css" />
@@ -52,16 +52,17 @@
 
   <body>
     <!-- Nav -->
-     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+<nav class="navbar text-uppercase navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container-fluid">
         <a class="navbar-brand" href="/index.html">
           <img
-            src="/img/DS_headerIcon.svg"
-            alt="DS logo"
+            src="/img/logo/FizzBuzzLogoHorizontal.svg"
+            alt="Fizz Buzz Icon"
             height="40"
             class="d-inline-block"
+            id="appName"
           />
-          <span class="mx-3" id="appName">APP NAME</span></a
+         </a
         >
         <button
           class="navbar-toggler"
@@ -79,21 +80,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link"href="/index.html"
+              <a class="nav-link"  href="/index.html"
                 >Home</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page"  href="/app.html">The App</a>
+              <a class="nav-link" href="/app.html">The App</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/code.html">The Code</a>
+              <a class="nav-link active" aria-current="page"" href="/code.html">The Code</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">The Repo</a>
+              <a class="nav-link" href="https://github.com/RokitDan/fizzBuzz/" target="_blank">The Repo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="https://dannydevportfolio.netlify.app/" target="_blank">About</a>
             </li>
           </ul>
         </div>
@@ -107,30 +108,118 @@
           <div class="col-12 col-lg-8">
             <pre class="line-numbers">
               <code class="language-javascript">
-                function getValue() {
-                      alert("BEAN");
-                    }
+              function fizzBuzz() {
+  let fizz = document.getElementById("fizzNum").value;
+  let buzz = document.getElementById("buzzNum").value;
 
-                function getValue2() {
-                  let msg = "";
-                  msg = document.getElementById("message").value;
-                  Swal.fire({
-                    backdrop: false,
-                    title: "App Name",
-                    text: msg,
-                  });
-                }
+  
+  fizz = parseInt(fizz);
+  buzz = parseInt(buzz);
+
+  let startValue = document.getElementById("startValue").value;
+  let endValue = document.getElementById("endValue").value;
+
+
+  startValue = parseInt(startValue);
+  endValue = parseInt(endValue);
+
+  if (Number.isInteger(fizz) && Number.isInteger(buzz)) {
+    let numbersArray = generateNumbers(startValue, endValue);
+    displayValues(numbersArray);
+  } else {
+    Swal.fire({
+      backdrop: false,
+      title: "Numbers Not Found.",
+      text: "Please Enter Numbers",
+    });
+  }
+
+  if (startValue > endValue) {
+    Swal.fire({
+      backdrop: false,
+      title: "MUST BE: START < END.",
+      text: "START must be a lower value than END",
+    });
+
+    
+  }
+
+  function generateNumbers(start, end) {
+    let numbersArray = [];
+    for (let i = start; i <= end; i++) {
+      numbersArray.push(i);
+    }
+    return numbersArray;
+  }
+
+  function displayValues(numArray) {
+    let results = document.getElementById("results");
+    results.innerHTML = "";
+    for (let index = 0; index < numArray.length; index++) {
+      let tagDiv = document.createElement("div");
+
+      tagDiv.innerHTML = numArray[index];
+
+      tagDiv.classList.add("col");
+
+      if (numArray[index] % fizz == 0 && numArray[index] % buzz == 0) {
+        tagDiv.classList.add("fizzbuzz");
+        tagDiv.innerHTML = "FIZZBUZZ";
+      }
+
+      if (numArray[index] % fizz == 0 && numArray[index] % buzz !== 0) {
+        tagDiv.classList.add("fizz");
+        tagDiv.innerHTML = "FIZZ";
+      }
+
+      if (numArray[index] % fizz !== 0 && numArray[index] % buzz == 0) {
+        tagDiv.classList.add("buzz");
+        tagDiv.innerHTML = "BUZZ";
+      }
+
+      if (numArray[index] % fizz !== 0 && numArray[index] % buzz !== 0) {
+        if (numArray[index] % 2 == 0) {
+          tagDiv.classList.add("resultStyle");
+        } else {
+          tagDiv.classList.add("resultStyleLight");
+        }
+      }
+      results.appendChild(tagDiv);
+    }
+  }
+}
               </code>
             </pre>
           </div>
           <div class="col-12 col-lg-4">
-            <p class="fw-bold">
-              The code is structured in two functions
-            </p>
-            <h4>getValue</h4>
-            <p> Displays "BEAN" as an alert to the user upon clicking the button</p>
-            <h4>getValue2</h4>
-            <p> Displays a user-entered messaged as an alert upon typing a message into the input and clicking the button</p>
+            <h3 class="text-uppercase mb-4">How it Works</h3>
+            <ol>
+            <li> fizzBuzz() is the main function of the application that encompasses all logic in the program</li>
+           
+            <li>First, the program gets user-entered values from the text inputs in the HTML document:
+              <ul class="fst-italic">
+                <li>Starting Value</li>
+                <li>Ending Value</li>
+                <li>FIZZ</li>
+                <li>BUZZ</li>
+              </ul>
+            </li>
+            <li>The application will show the user an error alert if they try to enter any characters other than numbers, if starting value is a larger number than ending value, or if they do not enter any numbers at all.</li>
+            <li>After getting the values from the text inputs, the program then parses the values into integers. FIZZBUZZ requires data to be integers in order to operate.</li>
+            <li>The application then generates an array, incremented by 1, based on the starting value and ending value provided by the user.</li>
+            <li>Once the array is generated, all numbers in the array are processed through a loop. This loop compares each number in the index to a set of conditions:
+              <ul class="fst-italic">
+                <li>
+                  If the number is divisible by the value entered for FIZZ and BUZZ, the number will be replaced with the word "FIZZBUZZ."
+                </li>
+                <li>If the number is divisible by the value entered for FIZZ but not divisible by the value for BUZZ, the number will be replaced with the word "FIZZ."</li>
+                <li>If the number is divisible by the value entered for BUZZ, but not divisible by the value for FIZZ, the number will be replaced with the word "BUZZ."</li>
+                <li>If the number is not divisible by the values for FIZZ or BUZZ, but is an even number, a default CSS style is added</li>
+                <li>If the number is not divisible by the values for FIZZ or BUZZ, but is an odd number, an alternative default CSS style is added</li>
+              </ul>
+            </li>
+            <li>After all numbers are processed, the results are displayed to the user by JavaScript to generate div elements with CSS and Bootstrap classes.</li>
+          </ol>
           </div>
         </div>
         </div>
@@ -144,17 +233,18 @@
                 <span class="muted">&copy; 2022 Danny Schellenberger | dleeschell@gmail.com</span>
             </div>
             <div class="col text-center">
-                <img src="/img/DannyLogo2022white.svg" alt="Danny DS Monogram" height="40">
+                <a class="nav-link" href="https://dannydevportfolio.netlify.app/" target="_blank"><img src="/img/DannyLogo2022white.svg" alt="Danny DS Monogram" height="40"></a>
             </div>
             <div class="col d-flex justify-content-center justify-content-lg-end">
-                    <div class="row">
-                    <div class="col social">
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                    <div class="col social"><a href="#"><i class="bi bi-github"></i></a></div>
-                        
-                </div>
+             <div class="row">
+              <div class="col social">
+                <a href="https://www.linkedin.com/in/danny-schellenberger-9b4b0166/" target="_blank"><i class="bi bi-linkedin"></i></a>
+              </div>
+              <div class="col social">
+                <a href="https://github.com/RokitDan/" target="_blank"><i class="bi bi-github"></i></a>
+              </div>
             </div>
+          </div>
         </div>
       </div>
     </footer>

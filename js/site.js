@@ -99,43 +99,43 @@ function fizzBuzz() {
     }
   }
 
-  // function displayValuesBackwards(numArray) {
-  //   //<div class="col"></div>
-  //   let results = document.getElementById("results");
-  //   results.innerHTML = "";
-  //   for (let index = numArray-1; index >= 1; index--) {
-  //     let tagDiv = document.createElement("div"); //create div tag
+  function displayValuesBackwards(numArray) {
+    //<div class="col"></div>
+    let results = document.getElementById("results");
+    results.innerHTML = "";
+    for (let index = numArray-1; index >= 1; index--) {
+      let tagDiv = document.createElement("div"); //create div tag
 
-  //     tagDiv.innerHTML = numArray[index]; //get the value of the current array index
+      tagDiv.innerHTML = numArray[index]; //get the value of the current array index
 
-  //     tagDiv.classList.add("col"); //add class(es)
+      tagDiv.classList.add("col"); //add class(es)
 
-  //     if (numArray[index] % fizz == 0 && numArray[index] % buzz == 0) {
-  //       tagDiv.classList.add("fizzbuzz");
-  //       tagDiv.innerHTML = "FIZZBUZZ";
-  //     }
+      if (numArray[index] % fizz == 0 && numArray[index] % buzz == 0) {
+        tagDiv.classList.add("fizzbuzz");
+        tagDiv.innerHTML = "FIZZBUZZ";
+      }
 
-  //     if (numArray[index] % fizz == 0 && numArray[index] % buzz !== 0) {
-  //       tagDiv.classList.add("fizz");
-  //       tagDiv.innerHTML = "FIZZ";
-  //     }
+      if (numArray[index] % fizz == 0 && numArray[index] % buzz !== 0) {
+        tagDiv.classList.add("fizz");
+        tagDiv.innerHTML = "FIZZ";
+      }
 
-  //     if (numArray[index] % fizz !== 0 && numArray[index] % buzz == 0) {
-  //       tagDiv.classList.add("buzz");
-  //       tagDiv.innerHTML = "BUZZ";
-  //     }
+      if (numArray[index] % fizz !== 0 && numArray[index] % buzz == 0) {
+        tagDiv.classList.add("buzz");
+        tagDiv.innerHTML = "BUZZ";
+      }
 
-  //     if (numArray[index] % fizz !== 0 && numArray[index] % buzz !== 0) {
-  //       if (numArray[index] % 2 == 0) {
-  //         tagDiv.classList.add("resultStyle");
-  //       } else {
-  //         tagDiv.classList.add("resultStyleLight");
-  //       }
-  //     }
+      if (numArray[index] % fizz !== 0 && numArray[index] % buzz !== 0) {
+        if (numArray[index] % 2 == 0) {
+          tagDiv.classList.add("resultStyle");
+        } else {
+          tagDiv.classList.add("resultStyleLight");
+        }
+      }
 
-  //     results.appendChild(tagDiv); //append to the page
-  //   }
-  // }
+      results.appendChild(tagDiv); //append to the page
+    }
+  }
 
 
 
