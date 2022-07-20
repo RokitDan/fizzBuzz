@@ -12,17 +12,21 @@
   --dls-nav-toggler-color: #1b2432;
   --dls-title-color: var(var(--dls-secondary-color));
 
+  /* App Colors */
+  --dls-orange: rgb(223, 202, 21);
+  --dls-background-color-fizzbuzz: #ffffda;
+
   /* Text */
   --dls-font-size: 1.2rem;
   --dls-font-weight: 400;
   --dls-line-height: 1.5rem;
 
-/* Cards */
- --dls-card-radius: 12px;
+  /* Cards */
+  --dls-card-radius: 12px;
 
- /* Modals */
+  /* Modals */
 
- --dls-modal-radius: 20px;
+  --dls-modal-radius: 20px;
 
   /* Transition */
   --dls-transition-time: 270ms ease;
